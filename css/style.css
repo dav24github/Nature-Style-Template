@@ -173,6 +173,42 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    background-color: orangered;
+    color: aqua;
+    font-size: 2rem;
+    height: 50rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff;
+      transition: all 0.2s ease-out;
+      transition-delay: 0.2s;
+      transform: rotateY(0deg);
+      backface-visibility: hidden; }
+    .card__side--back {
+      transition: all 0.2s ease-in;
+      transform: rotateY(90deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+  .card:hover .card__side--front {
+    transition: all 0.2s ease-in;
+    transform: rotateY(-90deg);
+    transition-delay: 0s; }
+  .card:hover .card__side--back {
+    transition: all 0.2s ease-out;
+    transform: rotateY(0deg);
+    transition-delay: 0.2s; }
+
 .composition {
   position: relative; }
   .composition__photo {
@@ -275,3 +311,8 @@ body {
   margin-top: -10rem; }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem; }
